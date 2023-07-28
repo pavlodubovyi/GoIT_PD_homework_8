@@ -6,7 +6,7 @@ users = {"Pavlo": datetime(1982, 7, 28),
          "Max": datetime(1990, 7, 28),
          "Maria": datetime(1994, 7, 31),
          "Kateryna": datetime(1985, 8, 2),
-         "Varvara": datetime(2012, 8, 24),
+         "Varvara": datetime(2012, 7, 30),
          "Prokop": datetime(1956, 7, 22)}
 
 def get_birthdays_per_week(users):
@@ -34,7 +34,8 @@ def get_birthdays_per_week(users):
             day_of_week_num = datetime.weekday(date)
             if day_of_week_num in [5, 6]:
                 birthdays_weekdays_list[0].append(name)   # якщо ДР на вихідних
-            birthdays_weekdays_list[day_of_week_num].append(name)
+            else:
+                birthdays_weekdays_list[day_of_week_num].append(name)
     
         if current_date.weekday() == 0 and current_date - weekend_interwal <= date < current_date: # якщо сьогодні понеділок
         # то вітаємо тих, у кого минулих вихідних був ДР, if any:
